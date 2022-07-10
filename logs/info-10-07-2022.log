@@ -1,0 +1,273 @@
+10/07/2022 14:45:54 DEBUG org.hibernate.SQL - 
+    select
+        bills0_.customer_id as customer4_1_0_,
+        bills0_.bill_id as bill_id1_1_0_,
+        bills0_.bill_id as bill_id1_1_1_,
+        bills0_.apartment_id as apartmen3_1_1_,
+        bills0_.customer_id as customer4_1_1_,
+        bills0_.employee_id as employee5_1_1_,
+        bills0_.price as price2_1_1_,
+        apartment1_.apartment_id as apartmen1_0_2_,
+        apartment1_.apartment_code as apartmen2_0_2_,
+        apartment1_.door_direction as door_dir3_0_2_,
+        apartment1_.num_bedroom as num_bedr4_0_2_,
+        apartment1_.price as price5_0_2_,
+        apartment1_.status as status6_0_2_,
+        employee2_.employee_id as employee1_3_3_,
+        employee2_.employee_name as employee2_3_3_,
+        employee2_.role_name as role_nam3_3_3_ 
+    from
+        Bill bills0_ 
+    left outer join
+        Apartment apartment1_ 
+            on bills0_.apartment_id=apartment1_.apartment_id 
+    left outer join
+        Employee employee2_ 
+            on bills0_.employee_id=employee2_.employee_id 
+    where
+        bills0_.customer_id=?
+10/07/2022 14:45:57 DEBUG org.hibernate.SQL - 
+    select
+        apartment0_.apartment_id as apartmen1_0_,
+        apartment0_.apartment_code as apartmen2_0_,
+        apartment0_.door_direction as door_dir3_0_,
+        apartment0_.num_bedroom as num_bedr4_0_,
+        apartment0_.price as price5_0_,
+        apartment0_.status as status6_0_ 
+    from
+        Apartment apartment0_ 
+    where
+        apartment0_.num_bedroom=? 
+        and apartment0_.status=?
+10/07/2022 14:45:57 DEBUG org.hibernate.SQL - 
+    select
+        bill0_.bill_id as bill_id1_1_3_,
+        bill0_.apartment_id as apartmen3_1_3_,
+        bill0_.customer_id as customer4_1_3_,
+        bill0_.employee_id as employee5_1_3_,
+        bill0_.price as price2_1_3_,
+        apartment1_.apartment_id as apartmen1_0_0_,
+        apartment1_.apartment_code as apartmen2_0_0_,
+        apartment1_.door_direction as door_dir3_0_0_,
+        apartment1_.num_bedroom as num_bedr4_0_0_,
+        apartment1_.price as price5_0_0_,
+        apartment1_.status as status6_0_0_,
+        customer2_.customer_id as customer1_2_1_,
+        customer2_.address as address2_2_1_,
+        customer2_.birthday as birthday3_2_1_,
+        customer2_.customer_name as customer4_2_1_,
+        customer2_.phone as phone5_2_1_,
+        employee3_.employee_id as employee1_3_2_,
+        employee3_.employee_name as employee2_3_2_,
+        employee3_.role_name as role_nam3_3_2_ 
+    from
+        Bill bill0_ 
+    left outer join
+        Apartment apartment1_ 
+            on bill0_.apartment_id=apartment1_.apartment_id 
+    left outer join
+        Customer customer2_ 
+            on bill0_.customer_id=customer2_.customer_id 
+    left outer join
+        Employee employee3_ 
+            on bill0_.employee_id=employee3_.employee_id 
+    where
+        bill0_.apartment_id=?
+10/07/2022 14:46:01 DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Bill
+        (apartment_id, customer_id, employee_id, price) 
+    values
+        (?, ?, ?, ?)
+10/07/2022 14:46:01 DEBUG org.hibernate.SQL - 
+    update
+        Apartment 
+    set
+        apartment_code=?,
+        door_direction=?,
+        num_bedroom=?,
+        price=?,
+        status=? 
+    where
+        apartment_id=?
+10/07/2022 14:46:21 DEBUG org.hibernate.SQL - 
+    select
+        customer0_.customer_id as customer1_2_0_,
+        customer0_.address as address2_2_0_,
+        customer0_.birthday as birthday3_2_0_,
+        customer0_.customer_name as customer4_2_0_,
+        customer0_.phone as phone5_2_0_,
+        bills1_.customer_id as customer4_1_1_,
+        bills1_.bill_id as bill_id1_1_1_,
+        bills1_.bill_id as bill_id1_1_2_,
+        bills1_.apartment_id as apartmen3_1_2_,
+        bills1_.customer_id as customer4_1_2_,
+        bills1_.employee_id as employee5_1_2_,
+        bills1_.price as price2_1_2_,
+        apartment2_.apartment_id as apartmen1_0_3_,
+        apartment2_.apartment_code as apartmen2_0_3_,
+        apartment2_.door_direction as door_dir3_0_3_,
+        apartment2_.num_bedroom as num_bedr4_0_3_,
+        apartment2_.price as price5_0_3_,
+        apartment2_.status as status6_0_3_,
+        employee3_.employee_id as employee1_3_4_,
+        employee3_.employee_name as employee2_3_4_,
+        employee3_.role_name as role_nam3_3_4_ 
+    from
+        Customer customer0_ 
+    left outer join
+        Bill bills1_ 
+            on customer0_.customer_id=bills1_.customer_id 
+    left outer join
+        Apartment apartment2_ 
+            on bills1_.apartment_id=apartment2_.apartment_id 
+    left outer join
+        Employee employee3_ 
+            on bills1_.employee_id=employee3_.employee_id 
+    where
+        customer0_.customer_id=?
+10/07/2022 14:46:21 DEBUG org.hibernate.SQL - 
+    select
+        bills0_.employee_id as employee5_1_0_,
+        bills0_.bill_id as bill_id1_1_0_,
+        bills0_.bill_id as bill_id1_1_1_,
+        bills0_.apartment_id as apartmen3_1_1_,
+        bills0_.customer_id as customer4_1_1_,
+        bills0_.employee_id as employee5_1_1_,
+        bills0_.price as price2_1_1_,
+        apartment1_.apartment_id as apartmen1_0_2_,
+        apartment1_.apartment_code as apartmen2_0_2_,
+        apartment1_.door_direction as door_dir3_0_2_,
+        apartment1_.num_bedroom as num_bedr4_0_2_,
+        apartment1_.price as price5_0_2_,
+        apartment1_.status as status6_0_2_,
+        customer2_.customer_id as customer1_2_3_,
+        customer2_.address as address2_2_3_,
+        customer2_.birthday as birthday3_2_3_,
+        customer2_.customer_name as customer4_2_3_,
+        customer2_.phone as phone5_2_3_ 
+    from
+        Bill bills0_ 
+    left outer join
+        Apartment apartment1_ 
+            on bills0_.apartment_id=apartment1_.apartment_id 
+    left outer join
+        Customer customer2_ 
+            on bills0_.customer_id=customer2_.customer_id 
+    where
+        bills0_.employee_id=?
+10/07/2022 14:46:21 DEBUG org.hibernate.SQL - 
+    select
+        bills0_.customer_id as customer4_1_0_,
+        bills0_.bill_id as bill_id1_1_0_,
+        bills0_.bill_id as bill_id1_1_1_,
+        bills0_.apartment_id as apartmen3_1_1_,
+        bills0_.customer_id as customer4_1_1_,
+        bills0_.employee_id as employee5_1_1_,
+        bills0_.price as price2_1_1_,
+        apartment1_.apartment_id as apartmen1_0_2_,
+        apartment1_.apartment_code as apartmen2_0_2_,
+        apartment1_.door_direction as door_dir3_0_2_,
+        apartment1_.num_bedroom as num_bedr4_0_2_,
+        apartment1_.price as price5_0_2_,
+        apartment1_.status as status6_0_2_,
+        employee2_.employee_id as employee1_3_3_,
+        employee2_.employee_name as employee2_3_3_,
+        employee2_.role_name as role_nam3_3_3_ 
+    from
+        Bill bills0_ 
+    left outer join
+        Apartment apartment1_ 
+            on bills0_.apartment_id=apartment1_.apartment_id 
+    left outer join
+        Employee employee2_ 
+            on bills0_.employee_id=employee2_.employee_id 
+    where
+        bills0_.customer_id=?
+10/07/2022 14:46:21 DEBUG org.hibernate.SQL - 
+    select
+        bills0_.customer_id as customer4_1_0_,
+        bills0_.bill_id as bill_id1_1_0_,
+        bills0_.bill_id as bill_id1_1_1_,
+        bills0_.apartment_id as apartmen3_1_1_,
+        bills0_.customer_id as customer4_1_1_,
+        bills0_.employee_id as employee5_1_1_,
+        bills0_.price as price2_1_1_,
+        apartment1_.apartment_id as apartmen1_0_2_,
+        apartment1_.apartment_code as apartmen2_0_2_,
+        apartment1_.door_direction as door_dir3_0_2_,
+        apartment1_.num_bedroom as num_bedr4_0_2_,
+        apartment1_.price as price5_0_2_,
+        apartment1_.status as status6_0_2_,
+        employee2_.employee_id as employee1_3_3_,
+        employee2_.employee_name as employee2_3_3_,
+        employee2_.role_name as role_nam3_3_3_ 
+    from
+        Bill bills0_ 
+    left outer join
+        Apartment apartment1_ 
+            on bills0_.apartment_id=apartment1_.apartment_id 
+    left outer join
+        Employee employee2_ 
+            on bills0_.employee_id=employee2_.employee_id 
+    where
+        bills0_.customer_id=?
+10/07/2022 14:46:21 DEBUG org.hibernate.SQL - 
+    select
+        bills0_.employee_id as employee5_1_0_,
+        bills0_.bill_id as bill_id1_1_0_,
+        bills0_.bill_id as bill_id1_1_1_,
+        bills0_.apartment_id as apartmen3_1_1_,
+        bills0_.customer_id as customer4_1_1_,
+        bills0_.employee_id as employee5_1_1_,
+        bills0_.price as price2_1_1_,
+        apartment1_.apartment_id as apartmen1_0_2_,
+        apartment1_.apartment_code as apartmen2_0_2_,
+        apartment1_.door_direction as door_dir3_0_2_,
+        apartment1_.num_bedroom as num_bedr4_0_2_,
+        apartment1_.price as price5_0_2_,
+        apartment1_.status as status6_0_2_,
+        customer2_.customer_id as customer1_2_3_,
+        customer2_.address as address2_2_3_,
+        customer2_.birthday as birthday3_2_3_,
+        customer2_.customer_name as customer4_2_3_,
+        customer2_.phone as phone5_2_3_ 
+    from
+        Bill bills0_ 
+    left outer join
+        Apartment apartment1_ 
+            on bills0_.apartment_id=apartment1_.apartment_id 
+    left outer join
+        Customer customer2_ 
+            on bills0_.customer_id=customer2_.customer_id 
+    where
+        bills0_.employee_id=?
+10/07/2022 14:46:21 DEBUG org.hibernate.SQL - 
+    select
+        bills0_.customer_id as customer4_1_0_,
+        bills0_.bill_id as bill_id1_1_0_,
+        bills0_.bill_id as bill_id1_1_1_,
+        bills0_.apartment_id as apartmen3_1_1_,
+        bills0_.customer_id as customer4_1_1_,
+        bills0_.employee_id as employee5_1_1_,
+        bills0_.price as price2_1_1_,
+        apartment1_.apartment_id as apartmen1_0_2_,
+        apartment1_.apartment_code as apartmen2_0_2_,
+        apartment1_.door_direction as door_dir3_0_2_,
+        apartment1_.num_bedroom as num_bedr4_0_2_,
+        apartment1_.price as price5_0_2_,
+        apartment1_.status as status6_0_2_,
+        employee2_.employee_id as employee1_3_3_,
+        employee2_.employee_name as employee2_3_3_,
+        employee2_.role_name as role_nam3_3_3_ 
+    from
+        Bill bills0_ 
+    left outer join
+        Apartment apartment1_ 
+            on bills0_.apartment_id=apartment1_.apartment_id 
+    left outer join
+        Employee employee2_ 
+            on bills0_.employee_id=employee2_.employee_id 
+    where
+        bills0_.customer_id=?
